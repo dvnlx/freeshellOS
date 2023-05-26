@@ -56,6 +56,10 @@ namespace freeshellOS
 							Thread.Sleep(1000);
 							Cosmos.System.Power.Shutdown();
 							break;
+						case var str when str.StartsWith("color -s"):
+							input = input.Replace("color -s", "");
+							color(input);
+							break;
 						default:
 							Console.WriteLine($"{input} Not Found. Type help for help. (FS01)");
 							break;
@@ -65,6 +69,33 @@ namespace freeshellOS
 				{
 					System.Console.WriteLine("No command entered (FS05)");
 				}
+			}
+		}
+		public static void color(string? argcol)
+		{
+			if (!string.IsNullOrEmpty(argcol))
+			{
+				try
+				{
+					ConsoleColor parsedColor;
+					if (Enum.TryParse(argcol, true, out parsedColor))
+					{
+						Console.ForegroundColor = parsedColor;
+						Console.WriteLine($"Set to {argcol}");
+					}
+					else
+					{
+						Console.WriteLine("Invalid color (FS02)");
+					}
+				}
+				catch
+				{
+					Console.WriteLine("Invalid color (FS02)");
+				}
+			}
+			else
+			{
+				Console.WriteLine("Input color is empty (FS03)");
 			}
 		}
 	}
