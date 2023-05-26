@@ -1,5 +1,6 @@
 ﻿using System;
 using Sys = Cosmos.System;
+using Figgle;
 
 namespace freeshellOS
 {
@@ -8,7 +9,8 @@ namespace freeshellOS
 
 		protected override void BeforeRun()
 		{
-			Console.WriteLine("FreeshellOS!");
+			string welcome = FiggleFonts.Banner3D.Render("Free.shell();");
+			Console.WriteLine(welcome);
 		}
 
 		protected override void Run()
