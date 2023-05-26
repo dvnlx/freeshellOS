@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Diagnostics;
 using Color = System.ConsoleColor;
 using Sys = Cosmos.System;
+using System.Threading;
 
 namespace freeshellOS
 {
@@ -43,8 +44,17 @@ namespace freeshellOS
 						case "hello":
 							System.Console.WriteLine("Hello World!");
 							break;
-						case "reload":
-							System.Console.WriteLine("Reloading...");
+						case "shutdown":
+							Console.Clear();
+							System.Console.WriteLine("Goodbye!");
+							Thread.Sleep(1000);
+							Cosmos.System.Power.Shutdown();
+							break;
+						case "reboot":
+							Console.Clear();
+							Console.WriteLine("Rebooting...");
+							Thread.Sleep(1000);
+							Cosmos.System.Power.Shutdown();
 							break;
 						default:
 							Console.WriteLine($"{input} Not Found. Type help for help. (FS01)");
