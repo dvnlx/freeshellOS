@@ -68,11 +68,11 @@ namespace freeshellOS
 							Console.Clear();
 							break;
 						case "ls root":
-							var directoryList = Sys.FileSystem.VFS.VFSManager.GetDirectoryListing("0:\\");
+							var directoryList = Directory.GetFiles("0:\\");
                                 Console.WriteLine("listing all files in root (0:\\)");
 							foreach (var directoryEntry in directoryList)
 							{
-                                Console.WriteLine(directoryEntry.mName);
+                                Console.WriteLine(directoryEntry);
 							}
 							break;
 						case "dskinf":
