@@ -75,6 +75,13 @@ namespace freeshellOS
                                 Console.WriteLine(directoryEntry.mName);
 							}
 							break;
+						case "dskinf":
+							Console.WriteLine("Disk Info");
+							long availableSpace = Sys.FileSystem.VFS.VFSManager.GetAvailableFreeSpace("0:\\");
+							Console.WriteLine("Available Free Space (In Bytes): " + availableSpace);
+							string fsType = Sys.FileSystem.VFS.VFSManager.GetFileSystemType("0:\\");
+							Console.WriteLine("File System Type: " + fsType);
+							break;
 						default:
 							Console.WriteLine($"{input} Not Found. Type help for help. (FS01)");
 							break;

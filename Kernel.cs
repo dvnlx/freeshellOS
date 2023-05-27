@@ -23,7 +23,7 @@ namespace freeshellOS
 
 		protected override void Run()
 		{
-			string filePath = Directory.GetCurrentDirectory();
+			string filePath = "0:\\";
 			shell.createInstance("dvnlx","vmware", filePath);
 		}
 	}
