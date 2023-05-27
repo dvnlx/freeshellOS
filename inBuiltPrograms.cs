@@ -36,7 +36,6 @@ namespace freeshellOS
 			{
 				colorDictionary = new Dictionary<string, ConsoleColor>()
 				{
-					{ "black", ConsoleColor.Black },
 					{ "blue", ConsoleColor.Blue },
 					{ "cyan", ConsoleColor.Cyan },
 					{ "gray", ConsoleColor.Gray },

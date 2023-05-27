@@ -11,12 +11,12 @@ namespace freeshellOS
 {
 	internal class shell
 	{
-		public static void createInstance()
+		public static void createInstance(string name, string pcname)
 		{
 			bool commands = true;
 			while (commands)
 			{
-				Console.Write("( ~/ )");
+				Console.Write($"( {name}@{pcname} )");
 				Console.Write("> ");
 				Console.Write("> ");
 				Console.Write("§ ");
@@ -27,10 +27,13 @@ namespace freeshellOS
 					switch (input)
 					{
 						case "help":
-							Console.WriteLine("W.I.P");
-							break;
-						case "about":
-							Console.WriteLine("FreeshellOS v0.1");
+							Console.WriteLine("freeshellOS v0.1 Help");
+							Console.WriteLine("hello: Shows Hello World (for testing)");
+							Console.WriteLine("shutdown: shuts the system down");
+							Console.WriteLine("reboot: reboots the system");
+							Console.WriteLine("color -s: changes color: all colors: blue, cyan, gray, green, magenta, red and yellow. \n EXAMPLE: color -s red");
+							Console.WriteLine("color -r: resets color to white");
+							Console.WriteLine("clcon: clears console");
 							break;
 						case "hello":
 							System.Console.WriteLine("Hello World!");
@@ -53,6 +56,9 @@ namespace freeshellOS
 							break;
 						case "color -r":
 							inBuiltPrograms.resetColor();
+							break;
+						case "clcon":
+							Console.Clear();
 							break;
 						default:
 							Console.WriteLine($"{input} Not Found. Type help for help. (FS01)");
