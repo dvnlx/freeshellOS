@@ -1,22 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+using System.Diagnostics;
 using Color = System.ConsoleColor;
+using Sys = Cosmos.System;
+using System.Threading;
+using Cosmos.System;
+using Cosmos.System.ScanMaps;
+using System.IO;
+using Console = System.Console;
 
 namespace freeshellOS
 {
 	internal class shell
 	{
-		public static void createInstance(string name, string pcname)
+		public static void createInstance(string name, string pcname, string filePath)
 		{
 			bool commands = true;
 			while (commands)
-			{
-				Console.Write($"( {name}@{pcname} )");
+			{	if (!string.IsNullOrEmpty(filePath)) {
+					Console.Write($"( {name}@{pcname} at {filePath})");
+				}
+				else
+				{
+					Console.Write($"( {name}@{pcname} no path)");
+				}
 				Console.Write("> ");
 				Console.Write("> ");
 				Console.Write("§ ");
@@ -27,7 +34,7 @@ namespace freeshellOS
 					switch (input)
 					{
 						case "help":
-							Console.WriteLine("freeshellOS v0.1 Help");
+							Console.WriteLine("freeshellOS v0.2 Help");
 							Console.WriteLine("hello: Shows Hello World (for testing)");
 							Console.WriteLine("shutdown: shuts the system down");
 							Console.WriteLine("reboot: reboots the system");
@@ -59,6 +66,14 @@ namespace freeshellOS
 							break;
 						case "clcon":
 							Console.Clear();
+							break;
+						case "ls root":
+							var directoryList = Sys.FileSystem.VFS.VFSManager.GetDirectoryListing("0:\\");
+                                Console.WriteLine("listing all files in root (0:\\)");
+							foreach (var directoryEntry in directoryList)
+							{
+                                Console.WriteLine(directoryEntry.mName);
+							}
 							break;
 						default:
 							Console.WriteLine($"{input} Not Found. Type help for help. (FS01)");
