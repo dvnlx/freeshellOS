@@ -103,6 +103,9 @@ namespace freeshellOS
 						case "kbdmap -c":
 							kbdmap.getCurrentKBD();
 							break;
+						case "sysinfo":
+							sysinfo.showinfo();
+							break;
 						default:
 							Console.WriteLine($"{input} Not Found. Type help for help. (FS01)");
 							break;
