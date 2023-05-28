@@ -43,7 +43,7 @@ namespace freeshellOS
 							Console.WriteLine("clcon: clears console");
 							Console.WriteLine("ls root -F: shows all files in root (0:\\)");
 							Console.WriteLine("ls root -f: shows all folders in root (0:\\)");
-							Console.WriteLine("dskinf: shows info about the disk ");
+							Console.WriteLine("dskinf: shows info about the disk");
 							break;
 						case "hello":
 							System.Console.WriteLine("Hello World!");
