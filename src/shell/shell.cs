@@ -8,6 +8,7 @@ using Cosmos.System;
 using Cosmos.System.ScanMaps;
 using System.IO;
 using Console = System.Console;
+using freeshellOS.commands;
 
 namespace freeshellOS
 {
@@ -44,6 +45,8 @@ namespace freeshellOS
 							Console.WriteLine("ls root -F: shows all files in root (0:\\)");
 							Console.WriteLine("ls root -f: shows all folders in root (0:\\)");
 							Console.WriteLine("dskinf: shows info about the disk");
+							Console.WriteLine("kbdmap -s: changes Keyboard Mapping \n All options: de, en-us and fr. \n EXAMPLE: kbdmap -s de");
+							Console.WriteLine("kbdmap -c: shows current keyboard mapping.");
 							break;
 						case "hello":
 							System.Console.WriteLine("Hello World!");
@@ -62,10 +65,10 @@ namespace freeshellOS
 							break;
 						case var str when str.StartsWith("color -s"):
 							input = input.Replace("color -s ", "");
-							inBuiltPrograms.color(input);
+							color.Run(input);
 							break;
 						case "color -r":
-							inBuiltPrograms.resetColor();
+							color.resetColor();
 							break;
 						case "clcon":
 							Console.Clear();
@@ -92,6 +95,13 @@ namespace freeshellOS
 							Console.WriteLine("Available Free Space (In Bytes): " + availableSpace);
 							string fsType = Sys.FileSystem.VFS.VFSManager.GetFileSystemType("0:\\");
 							Console.WriteLine("File System Type: " + fsType);
+							break;
+						case var str when str.StartsWith("kbdmap -s"):
+							input = input.Replace("kbdmap -s ", "");
+							kbdmap.setKBD(input);
+							break;
+						case "kbdmap -c":
+							kbdmap.getCurrentKBD();
 							break;
 						default:
 							Console.WriteLine($"{input} Not Found. Type help for help. (FS01)");

@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace freeshellOS
+namespace freeshellOS.commands
 {
-	internal class inBuiltPrograms
+	internal class color
 	{
 			private static Dictionary<string, ConsoleColor> colorDictionary;
 
-			public static void color(string? argcol)
+			public static void Run(string? argcol)
 			{
 				if(!string.IsNullOrEmpty(argcol)) { 
 				InitializeColorDictionary();
