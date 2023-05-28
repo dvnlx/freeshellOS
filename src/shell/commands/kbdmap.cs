@@ -27,7 +27,7 @@ namespace freeshellOS.commands
 
 		public static void getCurrentKBD()
 		{
-            System.Console.WriteLine(KeyboardManager.GetKeyLayout();); 
+            System.Console.WriteLine(KeyboardManager.GetKeyLayout()); 
 		}
 	}
 }
