@@ -41,6 +41,9 @@ namespace freeshellOS
 							Console.WriteLine("color -s: changes color: all colors: blue, cyan, gray, green, magenta, red and yellow. \n EXAMPLE: color -s red");
 							Console.WriteLine("color -r: resets color to white");
 							Console.WriteLine("clcon: clears console");
+							Console.WriteLine("ls root -F: shows all files in root (0:\\)");
+							Console.WriteLine("ls root -f: shows all folders in root (0:\\)");
+							Console.WriteLine("dskinf: shows info about the disk ");
 							break;
 						case "hello":
 							System.Console.WriteLine("Hello World!");
@@ -67,12 +70,20 @@ namespace freeshellOS
 						case "clcon":
 							Console.Clear();
 							break;
-						case "ls root":
+						case "ls root -F":
+							var fileList = Directory.GetFiles("0:\\");
+							Console.WriteLine("listing all files in root (0:\\)");
+							foreach (var directoryEntry in fileList)
+							{
+								Console.WriteLine(directoryEntry);
+							}
+							break;
+						case "ls root -f":
 							var directoryList = Directory.GetFiles("0:\\");
-                                Console.WriteLine("listing all files in root (0:\\)");
+							Console.WriteLine("listing all folders in root (0:\\)");
 							foreach (var directoryEntry in directoryList)
 							{
-                                Console.WriteLine(directoryEntry);
+								Console.WriteLine(directoryEntry);
 							}
 							break;
 						case "dskinf":
