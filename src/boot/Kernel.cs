@@ -20,7 +20,7 @@ namespace freeshellOS.boot
 
         protected override void Run()
         {
-			var cfgFile = @"0:\sys\system.cfg";
+			//var cfgFile = @"0:\sys\system.cfg";
 			//if (!File.Exists(cfgFile))
 			//{
 				//oobe.init();
