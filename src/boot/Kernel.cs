@@ -8,6 +8,9 @@ namespace freeshellOS.boot
 	public class Kernel : Sys.Kernel
     {
 
+        public string username = "root";
+        public string pcname = "fs.os";
+
         protected override void BeforeRun()
         {
             Console.WriteLine("Starting Up...");
@@ -26,7 +29,7 @@ namespace freeshellOS.boot
 				//oobe.init();
 			//}
 			string root = "0:\\";
-                shell.createInstance("dvnlx", "vmware", root);
+                shell.createInstance(username, pcname, root);
 
         }
     }
