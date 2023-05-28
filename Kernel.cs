@@ -16,6 +16,9 @@ namespace freeshellOS
 
 		protected override void BeforeRun()
 		{
+            Console.WriteLine("Starting Up...");
+			Thread.Sleep(1000);
+            Console.Clear();
             System.Console.WriteLine("Welcome to freeshellOS 0.2 / NVGKRNL");
 			var fs = new Sys.FileSystem.CosmosVFS();
 			Sys.FileSystem.VFS.VFSManager.RegisterVFS(fs);
@@ -23,8 +26,8 @@ namespace freeshellOS
 
 		protected override void Run()
 		{
-			string filePath = "0:\\";
-			shell.createInstance("dvnlx","vmware", filePath);
+			string root = "0:\\";
+			shell.createInstance("dvnlx","vmware", root);
 		}
 	}
 }
