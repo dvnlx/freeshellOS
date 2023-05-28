@@ -10,8 +10,10 @@ namespace freeshellOS.commands
 	internal class sysinfo
 	{
 		public static void showinfo() {
-            Console.WriteLine("FreeshellOS \n NVGKRNL");
-			Console.WriteLine($"CPU: {CPU.GetCPUBrandString}");
-        }
+            Console.WriteLine("Device Info");
+			Console.WriteLine($"CPU: {CPU.GetCPUBrandString()}");
+			Console.WriteLine($"RAM: {CPU.GetAmountOfRAM()} MB");
+			Console.WriteLine($"Uptime: {CPU.GetCPUUptime()} ms");
+		}
 	}
 }
