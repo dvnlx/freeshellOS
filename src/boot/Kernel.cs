@@ -16,17 +16,16 @@ namespace freeshellOS.boot
             Console.WriteLine("Welcome to freeshellOS 0.2 / NVGKRNL");
             var fs = new Sys.FileSystem.CosmosVFS();
             Sys.FileSystem.VFS.VFSManager.RegisterVFS(fs);
-            //var cfgFile = @"0:\sys\system.cfg";
-			//if (File.Exists(cfgFile))
-			//{
-				//oobe.init();
-			//}
 		}
 
         protected override void Run()
         {
-
-                string root = "0:\\";
+			var cfgFile = @"0:\sys\system.cfg";
+			//if (!File.Exists(cfgFile))
+			//{
+				//oobe.init();
+			//}
+			string root = "0:\\";
                 shell.createInstance("dvnlx", "vmware", root);
 
         }
