@@ -9,6 +9,7 @@ using Cosmos.System.ScanMaps;
 using System.IO;
 using Console = System.Console;
 using freeshellOS.commands;
+using freeshellOS.gui;
 
 namespace freeshellOS
 {
@@ -47,6 +48,7 @@ namespace freeshellOS
 							Console.WriteLine("dskinf: shows info about the disk");
 							Console.WriteLine("kbdmap -s: changes Keyboard Mapping \n All options: de, en-us and fr. \n EXAMPLE: kbdmap -s de");
 							Console.WriteLine("kbdmap -c: shows current keyboard mapping.");
+							Console.WriteLine("nvgui: Opens Desktop And GUI");
 							break;
 						case "hello":
 							System.Console.WriteLine("Hello World!");
@@ -105,6 +107,9 @@ namespace freeshellOS
 							break;
 						case "sysinfo":
 							sysinfo.showinfo();
+							break;
+						case "nvgui":
+							desktop.initDesktop();
 							break;
 						default:
 							Console.WriteLine($"{input} Not Found. Type help for help. (FS01)");

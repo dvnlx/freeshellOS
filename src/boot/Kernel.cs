@@ -2,13 +2,15 @@
 using System.Threading;
 using System.IO;
 using Console = System.Console;
+using Cosmos.System.Graphics;
 
 namespace freeshellOS.boot
 {
 	public class Kernel : Sys.Kernel
     {
+		Canvas canvas;
 
-        public string username = "root";
+		public string username = "root";
         public string pcname = "fs.os";
 
         protected override void BeforeRun()
@@ -19,6 +21,8 @@ namespace freeshellOS.boot
             Console.WriteLine("Welcome to freeshellOS 0.2 / NVGKRNL");
             var fs = new Sys.FileSystem.CosmosVFS();
             Sys.FileSystem.VFS.VFSManager.RegisterVFS(fs);
+			canvas = FullScreenCanvas.GetFullScreenCanvas(new Mode(640, 480, ColorDepth.ColorDepth32));
+			canvas.Clear();
 		}
 
         protected override void Run()
