@@ -21,8 +21,8 @@ namespace freeshellOS.boot
             Console.WriteLine("Welcome to freeshellOS 0.2 / NVGKRNL");
             var fs = new Sys.FileSystem.CosmosVFS();
             Sys.FileSystem.VFS.VFSManager.RegisterVFS(fs);
-			canvas = FullScreenCanvas.GetFullScreenCanvas(new Mode(640, 480, ColorDepth.ColorDepth32));
-			canvas.Clear();
+			// canvas = FullScreenCanvas.GetFullScreenCanvas(new Mode(640, 480, ColorDepth.ColorDepth32));
+            // canvas.Clear();
 		}
 
         protected override void Run()

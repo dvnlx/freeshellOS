@@ -15,10 +15,23 @@ namespace freeshellOS
 {
 	internal class shell
 	{
+		
 		public static void createInstance(string name, string pcname, string filePath)
 		{
 			bool commands = true;
-			while (commands)
+			string logo = @"
+'########::'######::::::::'#######:::'######::::'###:'###:::'####:
+ ##.....::'##... ##::::::'##.... ##:'##... ##::'##:::.. ##:: ####:
+ ##::::::: ##:::..::::::: ##:::: ##: ##:::..::'##::::::: ##:....::
+ ######:::. ######::::::: ##:::: ##:. ######:: ##::::::: ##:'####:
+ ##...:::::..... ##:::::: ##:::: ##::..... ##: ##::::::: ##: ####:
+ ##:::::::'##::: ##:'###: ##:::: ##:'##::: ##:. ##::::: ##::. ##::
+ ##:::::::. ######:: ###:. #######::. ######:::. ###: ###::: ##:::
+..:::::::::......:::...:::.......::::......:::::...::...::::.:::::
+FreeshellOS by dvnlx, Project Novagon;
+		";
+			Console.WriteLine(logo);
+            while (commands)
 			{	if (!string.IsNullOrEmpty(filePath)) {
 					Console.Write($"( {name}@{pcname} at {filePath})");
 				}
