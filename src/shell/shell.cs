@@ -28,7 +28,7 @@ namespace freeshellOS
  ##:::::::'##::: ##:'###: ##:::: ##:'##::: ##:. ##::::: ##::. ##::
  ##:::::::. ######:: ###:. #######::. ######:::. ###: ###::: ##:::
 ..:::::::::......:::...:::.......::::......:::::...::...::::.:::::
-FreeshellOS by dvnlx, Project Novagon;
+FreeshellOS and nvgkrnl by dvnlx, Project Novagon
 		";
 			Console.WriteLine(logo);
             while (commands)

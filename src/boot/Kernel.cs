@@ -18,7 +18,6 @@ namespace freeshellOS.boot
             Console.WriteLine("Starting Up...");
             Thread.Sleep(1000);
             Console.Clear();
-            Console.WriteLine("Welcome to freeshellOS 0.2 / NVGKRNL");
             var fs = new Sys.FileSystem.CosmosVFS();
             Sys.FileSystem.VFS.VFSManager.RegisterVFS(fs);
 			// canvas = FullScreenCanvas.GetFullScreenCanvas(new Mode(640, 480, ColorDepth.ColorDepth32));
